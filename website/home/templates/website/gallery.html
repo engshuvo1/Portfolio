@@ -1,0 +1,35 @@
+{% extends 'website/home.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="Project-container container-fluid">
+  <div class="container">
+  <div class="row">
+  <div class="col text-center p-4">
+  <h3 class="font-weight-bolder">GELLARY</h3>
+</div>
+</div>
+</div>
+<div class="row p-4 g-4">
+{% for x in image %}
+<div class="col-md-3">
+<div class="card-body shadow">
+<a href="{{ x.image.url }}" data-lightbox="image-1" data-title="My caption">
+<img src="{{ x.image.url }}" alt="" style="height: 200px;width: 300px;">
+</a>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+<script>
+  lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true
+  })
+</script>     
+
+{% endblock content %}

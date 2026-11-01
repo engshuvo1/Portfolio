@@ -1,0 +1,40 @@
+{% extends 'website/home.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <h3 class="py-2"></h3>
+    <div class="col-12 mx-auto shadow-lg">
+    <div class="row">
+    <div class="card">
+    <h3>Contact us</h3>
+    {% if messages %}
+    
+    {% for message in messages %}
+    <p {% if message.tags %} class="bg-{{ message.tags }} text-white py-2 text-center"{% endif %}>{{ message }}</p>
+    {% endfor %}
+    
+    {% endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{ forms|crispy }}
+    
+    <button class="btn btn-danger  col-md-2" type="submit">Send Message</button>
+
+    <h1 class="py-2"></h1>
+
+</form>
+
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock content %}

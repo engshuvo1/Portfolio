@@ -1,0 +1,30 @@
+{% extends 'website/home.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="Project-container container-fluid">
+    <div class="container">
+    <div class="row">
+    <div class="col text-center p-4">
+    <h3 class="font-weight-bolder">MY PROJECT</h3>
+</div>
+</div>
+
+<div class="row p-4 g-4">
+
+{% for c in image %}
+<div class="col-md-3 g-4">
+<div class="card-body">
+<!-- <a href="{{ c.image.url }}" data-lightbox="image-1" data-title="My caption"></a> -->
+<img src="{{ c.image.url }}" class="img-fluid" alt="">   
+<a href="{{ c.http_link }}" class="btn btn-outline-info mx-auto col-12"><span class="text-danger-emphasis">Discover Now</span></a>
+<h1 class="py-4"></h1>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+{% endblock content %}
